@@ -1,0 +1,4 @@
+# Empty request. Inspect the RGB camera view after receiving this request.
+---
+# Binary decision only: 100.0 iff all five fresh RGB frames are fully open; otherwise 0.0.
+float32 opening_percent

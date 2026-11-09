@@ -1,0 +1,10 @@
+door_opening_server:
+  ros__parameters:
+    image_topic: /camera/color/image_raw
+    provider: auto
+    intra_op_threads: 4
+    max_frame_age_sec: 0.25
+    image_reliability: best_effort
+    threshold: 0.47
+    frame_timeout_sec: 1.0
+    # model_path omitted: resolve the installed package's elevator_epoch5.onnx.

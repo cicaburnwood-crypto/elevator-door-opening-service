@@ -1,0 +1,20 @@
+[Unit]
+Description=Single-frame elevator door inspection (ROS2 Humble)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Edit User, HOME, DOOR_WS and ExecStart for your robot.
+User=robot
+Environment=HOME=/home/robot
+Environment=DOOR_WS=/home/robot/door_ws
+Environment=ROS_DOMAIN_ID=0
+ExecStart=/home/robot/elevator-door-opening-service/tools/run_service.sh
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=10
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target

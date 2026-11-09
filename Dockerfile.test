@@ -1,0 +1,12 @@
+FROM ros:humble-ros-base-jammy
+RUN apt-get update && apt-get install -y --no-install-recommends python3-pip python3-pytest python3-colcon-common-extensions ros-humble-rosidl-default-generators && rm -rf /var/lib/apt/lists/*
+COPY requirements-cpu.txt /tmp/requirements-cpu.txt
+RUN python3 -m pip install --no-cache-dir -r /tmp/requirements-cpu.txt
+WORKDIR /ws
+COPY tests/create_interface_fixture.py /tmp/create_interface_fixture.py
+RUN python3 /tmp/create_interface_fixture.py /ws/src/scan_planner_msgs
+COPY src /ws/src
+RUN . /opt/ros/humble/setup.sh && colcon build --merge-install --cmake-args -DBUILD_TESTING=OFF -DPython3_EXECUTABLE=/usr/bin/python3
+COPY tests /tests
+ENV ROS_LOCALHOST_ONLY=1 ROS_DOMAIN_ID=176
+CMD ["/bin/bash","-c","source /ws/install/setup.bash && python3 -m pytest -q /tests"]

@@ -1,0 +1,59 @@
+{
+  "door_id": "elevator_20261104",
+  "model_family": "YOLO26x-cls",
+  "epoch": 5,
+  "threshold": 0.47,
+  "validation_threshold": 0.5,
+  "image_size": 640,
+  "classes": {
+    "0": "not_fully_open",
+    "1": "fully_open"
+  },
+  "onnx_sha256": "81699f4ce7eed58f09489acd382b2b6dbcb3e4352773577b4cc3009b8426e98b",
+  "checkpoint_sha256": "261db81bdb5e016210eb4ed798684022128a42a4a4b493470b8cf3ac4d1e38a7",
+  "validation": {
+    "n": 1177,
+    "accuracy": 0.9634664401019541,
+    "balanced_accuracy": 0.9763736263736263,
+    "precision_open": 0.8612903225806452,
+    "recall_open": 1.0,
+    "f2_open": 0.9687953555878084,
+    "false_open_rate": 0.04725274725274725,
+    "tp": 267,
+    "tn": 867,
+    "fp": 43,
+    "fn": 0
+  },
+  "validation_by_video": {
+    "VAL-1": {
+      "n": 546,
+      "accuracy": 0.9688644688644689,
+      "balanced_accuracy": 0.9803695150115473,
+      "precision_open": 0.8692307692307693,
+      "recall_open": 1.0,
+      "f2_open": 0.9707903780068728,
+      "false_open_rate": 0.03926096997690531,
+      "tp": 113,
+      "tn": 416,
+      "fp": 17,
+      "fn": 0
+    },
+    "VAL-2": {
+      "n": 631,
+      "accuracy": 0.9587955625990491,
+      "balanced_accuracy": 0.9727463312368974,
+      "precision_open": 0.8555555555555555,
+      "recall_open": 1.0,
+      "f2_open": 0.9673366834170855,
+      "false_open_rate": 0.05450733752620545,
+      "tp": 154,
+      "tn": 451,
+      "fp": 26,
+      "fn": 0
+    }
+  },
+  "preprocess": "RGB uint8, PIL bilinear letterbox 640, padding 114, NCHW float32 /255",
+  "input_name": "rgb",
+  "output_name": "probabilities",
+  "opset": 17
+}

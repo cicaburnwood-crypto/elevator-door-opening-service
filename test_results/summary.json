@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-09",
+  "environment": "Ubuntu 22.04 / ROS2 Humble / Python 3.10 / ONNX Runtime CPU 1.23.2",
+  "tests": [
+    {
+      "suite": "humble_tests.xml",
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 1.718
+    },
+    {
+      "suite": "launch_tests.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 2.257
+    }
+  ],
+  "total_tests": 19,
+  "thor_tested": false
+}
